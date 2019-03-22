@@ -43,7 +43,7 @@ objects:
             value: "${KUBE_OPS_VIEW_ACCESS_TOKEN_URL}"
           - name: CREDENTIALS_DIR
             value: /kube_ops_view_oauth
-          image: raffaelespazzoli/ocp-ops-view:latest
+          image: hjacobs/kube-ops-view:latest
           imagePullPolicy: Always
           name: kube-ops-view
           ports:
@@ -107,7 +107,7 @@ objects:
         serviceAccount: kube-ops-view
         containers:
         - name: redis
-          image: redis:3.2-alpine
+          image: registry.access.redhat.com/rhscl/redis-32-rhel7
           imagePullPolicy: Always
           ports:
           - containerPort: 6379

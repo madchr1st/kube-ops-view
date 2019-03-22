@@ -19,7 +19,7 @@ spec:
       serviceAccount: kube-ops-view
       containers:
       - name: service
-        image: raffaelespazzoli/ocp-ops-view:latest
+        image: hjacobs/kube-ops-view:latest
         args:
         - --redis-url=redis://kube-ops-view-redis:6379
         ports:
@@ -60,7 +60,7 @@ spec:
       serviceAccount: kube-ops-view
       containers:
       - name: redis
-        image: redis:3.2-alpine
+        image: registry.access.redhat.com/rhscl/redis-32-rhel7 
         ports:
         - containerPort: 6379
           protocol: TCP
